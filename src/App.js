@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { GraphCanvas } from 'reagraph';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GraphCanvas
+    nodes={[
+      {
+        id: '1',
+        label: '1'
+      },
+      {
+        id: '2',
+        label: '2'
+      }
+    ]}
+    edges={[
+      {
+        id: '1->2',
+        source: 'n-1',
+        target: 'n-2',
+        label: 'Edge 1-2'
+      }
+    ]}
+  />
   );
 }
 
